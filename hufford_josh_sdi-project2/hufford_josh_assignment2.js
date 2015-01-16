@@ -37,7 +37,7 @@ var waitForParty = function(wait, numPeople) {
     return everyoneHere;
 }
 var seatingOptions = function(people) {
-    var i = people;
+    var i = people - 1;
     var numWholeSplits = 0;
     for (i; i > 0; i--) {
         if (0 === people % i) {
@@ -45,6 +45,14 @@ var seatingOptions = function(people) {
             console.log(people + " and " + i + " divide evenly.");
         }
     }
+    return numWholeSplits;
+}
+
+var concatenateStringsWithAnd = function(string1, string2) {
+    var andString = ", and ";
+    var retString = "";
+    retString = string1 + andString + string2;
+    return retString;
 }
 
 //Main Script
@@ -53,3 +61,9 @@ checkpointProcedure(numInParty);
 confirmation = confirm("You must wait for everyone in your party to arrive.");
 retBool = waitForParty(confirmation, numInParty);
 retNumber = seatingOptions(numInParty);
+retString = concatenateStringsWithAnd("We're ready to seat you now", "by the way, we had to place you in the back.");
+
+boolStringified = confirmation ? "Thank you all for waiting." : "I'm sorry we couldn't seat you all together."
+
+console.log(boolStringified + " With a party of " + numInParty + " people, we had " + retNumber + " seating options.");
+console.log("However, we tried our best. " + retString);
