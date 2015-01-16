@@ -11,13 +11,13 @@ var retNumber = 0;
 var retString = "";
 var boolStringified = "";
 //Function Declarations
-var checkpointProcedure = function(boolVar) {
-    if (boolVar) {
-        console.log("You must go through the full security line.");
+var checkpointProcedure = function(promptVar) {
+    if (parseInt(promptVar, 10)) {
+        console.log("There are " + promptVar + " people in your party.");
     } else {
-        console.log("You can go through the fast security line.");
+        console.log("This \"" + promptVar + "\" is not a valid number.");
     }
 }
 
 //Main Script
-checkpointProcedure(prompt("Do you have any liquids on you?"));
+checkpointProcedure(prompt("How many are in your party?"));
