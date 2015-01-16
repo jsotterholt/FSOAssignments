@@ -11,5 +11,13 @@ var retNumber = 0;
 var retString = "";
 var boolStringified = "";
 //Function Declarations
+var checkpointProcedure = function(boolVar) {
+    if (boolVar) {
+        console.log("You must go through the full security line.");
+    } else {
+        console.log("You can go through the fast security line.");
+    }
+}
 
 //Main Script
+checkpointProcedure(prompt("Do you have any liquids on you?"));
